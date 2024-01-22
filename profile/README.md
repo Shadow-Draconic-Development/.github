@@ -1,1 +1,1 @@
-<h1>Shadow's Avrae Automations<img align="right" src="../assets/main.png" width="100px"></h1>
+<h1>Shadow's Avrae Automations<img align="right" src="https://github.com/Shadow-Draconic-Development/.github/blob/60cb01e800f59566bbbd9f904bd0f9d2a96e8619/assets/main.png?raw=true" width="100px"></h1>
