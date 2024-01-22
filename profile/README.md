@@ -16,11 +16,11 @@ I am a 23 year old college student who is currently pursuing a Bachelor's Degree
 While I do this for free, taking the time to donate a few dollars allows me to dedicate more time to these projects as I have a family that I have to help take care of on top of schooling and work.
 
 ## Complete Content Libraries
-[Time Tracker](https://github.com/Shadow-Draconic-Development/Avrae-Time-Tracker)
+- [Time Tracker](https://github.com/Shadow-Draconic-Development/Avrae-Time-Tracker)
 
 
 ## In-Progress Content Libraries
-[Customizable Crafting System](https://github.com/Shadow-Draconic-Development/Avrae-Customizable-Crafting-System)
+- [Customizable Crafting System](https://github.com/Shadow-Draconic-Development/Avrae-Customizable-Crafting-System)
 
 ## Requests
 Requests can be made at this [link](https://forms.gle/YYkyPcBb1WHXWMYE6).
