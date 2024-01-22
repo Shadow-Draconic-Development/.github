@@ -1,0 +1,1 @@
+<h1>Shadow's Avrae Automations<img align="right" src="../assets/main.png" width="100px"></h1>
