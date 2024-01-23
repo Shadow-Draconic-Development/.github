@@ -21,6 +21,8 @@ While I do this for free, taking the time to donate a few dollars allows me to d
 
 ## In-Progress Content Libraries
 - [Customizable Crafting System](https://github.com/Shadow-Draconic-Development/Avrae-Customizable-Crafting-System)
+- [Land Management System](https://github.com/Shadow-Draconic-Development/Avrae-Land-Management-System)
+- [Weather Management System](https://github.com/Shadow-Draconic-Development/Avrae-Weather-Management-System)
 
 ## Requests
 Requests can be made at this [link](https://forms.gle/YYkyPcBb1WHXWMYE6).
