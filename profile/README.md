@@ -18,10 +18,18 @@ While I do this for free, taking the time to donate a few dollars allows me to d
 ## Complete Content Libraries
 - [Time Tracker](https://github.com/Shadow-Draconic-Development/Avrae-Time-Tracker)
 
-
 ## In-Progress Content Libraries
+- [Auto Lotto](https://github.com/Shadow-Draconic-Development/Avrae-Auto-Lotto)
+- [Crime Record Manager](https://github.com/Shadow-Draconic-Development/Avrae-Crime-Record-Manager)
 - [Customizable Crafting System](https://github.com/Shadow-Draconic-Development/Avrae-Customizable-Crafting-System)
+- [Egg Hatchery](https://github.com/Shadow-Draconic-Development/Avrae-Egg-Hatchery)
+- [General Utilities](https://github.com/Shadow-Draconic-Development/Avrae-General-Utilities)
+- [Guidebook Compiler](https://github.com/Shadow-Draconic-Development/Avrae-Guidebook-Compiler)
 - [Land Management System](https://github.com/Shadow-Draconic-Development/Avrae-Land-Management-System)
+- [Looking for Group](https://github.com/Shadow-Draconic-Development/Avrae-Looking-For-Group)
+- [Organization Reputation Manager](https://github.com/Shadow-Draconic-Development/Avrae-Organization-Reputation-Manager)
+- [Training Manager](https://github.com/Shadow-Draconic-Development/Avrae-Training-Manager)
+- [User Image Library](https://github.com/Shadow-Draconic-Development/Avrae-User-Image-Library)
 - [Weather Management System](https://github.com/Shadow-Draconic-Development/Avrae-Weather-Management-System)
 
 ## Requests
