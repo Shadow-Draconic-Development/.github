@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
       .then(response => response.json())
       .then(data => {
         data.forEach(repo => {
-          const lastUpdated = new Date(repo.updated_at);
+          const lastUpdated = new Date(repo.pushed_at);
           const listItem = document.createElement('li');
           const link = document.createElement('a');
           const formattedName = repo.name.replace('Avrae-', '').replace(/-/g, ' ');
