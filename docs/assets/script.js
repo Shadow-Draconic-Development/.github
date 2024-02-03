@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const completeRepositoriesList = document.getElementById('complete-repositories');
     const inProgressRepositoriesList = document.getElementById('in-progress-repositories');
 
-    fetch('assets/repositories.json')
+    fetch('/assets/repositories.json')
       .then(response => response.json())
       .then(data => {
         data.forEach(repo => {
