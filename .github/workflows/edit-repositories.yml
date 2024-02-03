@@ -57,6 +57,7 @@ jobs:
               'map(if .owner == $owner and .name == $name then . + { pushed_at: $pushed_at } else . end)' \
               assets/repositories.json > tmp.json && mv tmp.json assets/repositories.json
           done
+          
       - name: Commit and push changes (If not push trigger)
         if: github.event_name != 'push'
         run: |
