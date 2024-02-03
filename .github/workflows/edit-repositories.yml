@@ -16,11 +16,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Check if push event
+      - name: Sleep if push event (and not self_triggered)
         if: github.event_name == 'push' && github.event.head_commit.message != 'Update pushed_at for repositories'
         run: sleep 180  # Sleep for 3 minutes
 
-      - name: Update pushed_at for repositories
+      - name: Update pushed_at for repositories (If not push trigger)
         if: github.event_name != 'push'
         run: |
           # Parse the JSON data and iterate through each repository
@@ -39,7 +39,7 @@ jobs:
               assets/repositories.json > tmp.json && mv tmp.json assets/repositories.json
           done
 
-      - name: Update pushed_at for repositories
+      - name: Update pushed_at for repositories (if push event and not self_triggered)
         if: github.event_name == 'push' && github.event.head_commit.message != 'Update pushed_at for repositories'
         run: |
           # Parse the JSON data and iterate through each repository
@@ -57,8 +57,16 @@ jobs:
               'map(if .owner == $owner and .name == $name then . + { pushed_at: $pushed_at } else . end)' \
               assets/repositories.json > tmp.json && mv tmp.json assets/repositories.json
           done
+      - name: Commit and push changes (If not push trigger)
+        if: github.event_name != 'push'
+        run: |
+          git config --local user.email "shadowsstride@gmail.com"
+          git config --local user.name "SethHartman13"
+          git add assets/repositories.json
+          git commit -m "Update pushed_at for repositories"
+          git push
 
-      - name: Commit and push changes
+      - name: Commit and push changes (If push trigger and not self_triggered)
         if: github.event_name == 'push' && github.event.head_commit.message != 'Update pushed_at for repositories'
         run: |
           git config --local user.email "shadowsstride@gmail.com"
@@ -67,11 +75,3 @@ jobs:
           git commit -m "Update pushed_at for repositories"
           git push
 
-      - name: Commit and push changes
-        if: github.event_name != 'push'
-        run: |
-          git config --local user.email "shadowsstride@gmail.com"
-          git config --local user.name "SethHartman13"
-          git add assets/repositories.json
-          git commit -m "Update pushed_at for repositories"
-          git push
