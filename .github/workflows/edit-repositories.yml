@@ -4,8 +4,7 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '0 0 * * *'  # Runs daily
-  workflow_run:
-    workflows: ["Pages Build Workflow Name"]
+  workflows: ["Build Site"]
     types:
       - completed
 
