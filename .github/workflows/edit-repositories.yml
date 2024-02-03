@@ -15,57 +15,57 @@ jobs:
       - name: Fetch repository information and update JSON for Avrae-Time-Tracker
         run: |
           curl -sSf https://api.github.com/repos/Shadow-Draconic-Development/Avrae-Time-Tracker | \
-          jq '. | .owner = "Shadow-Draconic-Development" | .name = "Avrae-Time-Tracker" | .updated_at = (.pushed_at) | del(.pushed_at)' >> docs/assets/repositories.json
+          jq '. | .owner = "Shadow-Draconic-Development" | .name = "Avrae-Time-Tracker" | .updated_at = (.pushed_at) | del(.pushed_at)' >> /assets/repositories.json
 
       - name: Fetch repository information and update JSON for Avrae-Auto-Lotto
         run: |
           curl -sSf https://api.github.com/repos/Shadow-Draconic-Development/Avrae-Auto-Lotto | \
-          jq '. | .owner = "Shadow-Draconic-Development" | .name = "Avrae-Auto-Lotto" | .updated_at = (.pushed_at) | del(.pushed_at)' >> docs/assets/repositories.json
+          jq '. | .owner = "Shadow-Draconic-Development" | .name = "Avrae-Auto-Lotto" | .updated_at = (.pushed_at) | del(.pushed_at)' >> /assets/repositories.json
 
       - name: Fetch repository information and update JSON for Avrae-Customizable-Crafting-System
         run: |
           curl -sSf https://api.github.com/repos/Shadow-Draconic-Development/Avrae-Customizable-Crafting-System | \
-          jq '. | .owner = "Shadow-Draconic-Development" | .name = "Avrae-Customizable-Crafting-System" | .updated_at = (.pushed_at) | del(.pushed_at)' >> docs/assets/repositories.json
+          jq '. | .owner = "Shadow-Draconic-Development" | .name = "Avrae-Customizable-Crafting-System" | .updated_at = (.pushed_at) | del(.pushed_at)' >> /assets/repositories.json
 
       - name: Fetch repository information and update JSON for Avrae-Egg-Hatchery
         run: |
           curl -sSf https://api.github.com/repos/Shadow-Draconic-Development/Avrae-Egg-Hatchery | \
-          jq '. | .owner = "Shadow-Draconic-Development" | .name = "Avrae-Egg-Hatchery" | .updated_at = (.pushed_at) | del(.pushed_at)' >> docs/assets/repositories.json
+          jq '. | .owner = "Shadow-Draconic-Development" | .name = "Avrae-Egg-Hatchery" | .updated_at = (.pushed_at) | del(.pushed_at)' >> /assets/repositories.json
 
       - name: Fetch repository information and update JSON for Avrae-General-Utilities
         run: |
           curl -sSf https://api.github.com/repos/Shadow-Draconic-Development/Avrae-General-Utilities | \
-          jq '. | .owner = "Shadow-Draconic-Development" | .name = "Avrae-General-Utilities" | .updated_at = (.pushed_at) | del(.pushed_at)' >> docs/assets/repositories.json
+          jq '. | .owner = "Shadow-Draconic-Development" | .name = "Avrae-General-Utilities" | .updated_at = (.pushed_at) | del(.pushed_at)' >> /assets/repositories.json
 
       - name: Fetch repository information and update JSON for Avrae-Guidebook-Compiler
         run: |
           curl -sSf https://api.github.com/repos/Shadow-Draconic-Development/Avrae-Guidebook-Compiler | \
-          jq '. | .owner = "Shadow-Draconic-Development" | .name = "Avrae-Guidebook-Compiler" | .updated_at = (.pushed_at) | del(.pushed_at)' >> docs/assets/repositories.json
+          jq '. | .owner = "Shadow-Draconic-Development" | .name = "Avrae-Guidebook-Compiler" | .updated_at = (.pushed_at) | del(.pushed_at)' >> /assets/repositories.json
 
       - name: Fetch repository information and update JSON for Avrae-Land-Management-System
         run: |
           curl -sSf https://api.github.com/repos/Shadow-Draconic-Development/Avrae-Land-Management-System | \
-          jq '. | .owner = "Shadow-Draconic-Development" | .name = "Avrae-Land-Management-System" | .updated_at = (.pushed_at) | del(.pushed_at)' >> docs/assets/repositories.json
+          jq '. | .owner = "Shadow-Draconic-Development" | .name = "Avrae-Land-Management-System" | .updated_at = (.pushed_at) | del(.pushed_at)' >> /assets/repositories.json
 
       - name: Fetch repository information and update JSON for Avrae-Looking-For-Group
         run: |
           curl -sSf https://api.github.com/repos/Shadow-Draconic-Development/Avrae-Looking-For-Group | \
-          jq '. | .owner = "Shadow-Draconic-Development" | .name = "Avrae-Looking-For-Group" | .updated_at = (.pushed_at) | del(.pushed_at)' >> docs/assets/repositories.json
+          jq '. | .owner = "Shadow-Draconic-Development" | .name = "Avrae-Looking-For-Group" | .updated_at = (.pushed_at) | del(.pushed_at)' >> /assets/repositories.json
 
       - name: Fetch repository information and update JSON for Avrae-Organization-Reputation-Manager
         run: |
           curl -sSf https://api.github.com/repos/Shadow-Draconic-Development/Avrae-Organization-Reputation-Manager | \
-          jq '. | .owner = "Shadow-Draconic-Development" | .name = "Avrae-Organization-Reputation-Manager" | .updated_at = (.pushed_at) | del(.pushed_at)' >> docs/assets/repositories.json
+          jq '. | .owner = "Shadow-Draconic-Development" | .name = "Avrae-Organization-Reputation-Manager" | .updated_at = (.pushed_at) | del(.pushed_at)' >> /assets/repositories.json
 
       - name: Fetch repository information and update JSON for Avrae-Training-Manager
         run: |
           curl -sSf https://api.github.com/repos/Shadow-Draconic-Development/Avrae-Training-Manager | \
-          jq '. | .owner = "Shadow-Draconic-Development" | .name = "Avrae-Training-Manager" | .updated_at = (.pushed_at) | del(.pushed_at)' >> docs/assets/repositories.json
+          jq '. | .owner = "Shadow-Draconic-Development" | .name = "Avrae-Training-Manager" | .updated_at = (.pushed_at) | del(.pushed_at)' >> /assets/repositories.json
 
       - name: Fetch repository information and update JSON for Avrae-User-Image-Library
         run: |
           curl -sSf https://api.github.com/repos/Shadow-Draconic-Development/Avrae-User-Image-Library | \
-          jq '. | .owner = "Shadow-Draconic-Development" | .name = "Avrae-User-Image-Library" | .updated_at = (.pushed_at) | del(.pushed_at)' >> docs/assets/repositories.json
+          jq '. | .owner = "Shadow-Draconic-Development" | .name = "Avrae-User-Image-Library" | .updated_at = (.pushed_at) | del(.pushed_at)' >> /assets/repositories.json
 
       - name: Fetch repository information and update JSON for Avrae-Weather-Management-System
         run: |
