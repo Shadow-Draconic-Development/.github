@@ -24,3 +24,9 @@ if (prefersDarkMode) {
     document.body.classList.add("dark-mode");
     updateScrollbarColors(true);
 }
+
+window.onload = function() {
+    if (typeof PatreonButton !== 'undefined' && PatreonButton !== null) {
+        PatreonButton.init();
+    }
+};
