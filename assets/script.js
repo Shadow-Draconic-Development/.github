@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
           const link = document.createElement('a');
           const formattedName = repo.name.replace('Avrae-', '').replace(/-/g, ' ');
           link.href = `https://github.com/${repo.owner}/${repo.name}`;
-          link.textContent = `${formattedName} (Status: ${repo.status}, Updated ${lastUpdated.toLocaleDateString()})`;
+          link.textContent = `${formattedName} (Updated ${lastUpdated.toLocaleDateString()})`;
           listItem.appendChild(link);
 
           if (repo.status === 'complete') {
