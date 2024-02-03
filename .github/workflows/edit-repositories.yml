@@ -70,4 +70,4 @@ jobs:
       - name: Fetch repository information and update JSON for Avrae-Weather-Management-System
         run: |
           curl -sSf https://api.github.com/repos/Shadow-Draconic-Development/Avrae-Weather-Management-System | \
-          jq '. | .owner = "Shadow-Draconic-Development"
+          jq '. | .owner = "Shadow-Draconic-Development" | .name = "Avrae-Weather-Management-System" | .updated_at = (.pushed_at) | del(.pushed_at)' >> repositories.json
