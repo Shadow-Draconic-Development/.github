@@ -30,7 +30,6 @@ window.onload = function() {
         PatreonButton.init();
     }
 
-    // Calculate age dynamically based on June 13, 2001
     const birthDate = new Date('2001-06-01');
     const currentDate = new Date();
     let age = currentDate.getFullYear() - birthDate.getFullYear();
