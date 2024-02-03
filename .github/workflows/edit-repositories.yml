@@ -13,14 +13,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - name: Delay
-        if: github.event_name == 'push'
-        uses: jakejarvis/wait-action@v1
-        with:
-          time: '3m'
-
       - name: Checkout code
         uses: actions/checkout@v2
+
+      - name: Check if push event
+        if: github.event_name == 'push'
+        run: sleep 300  # Sleep for 5 minutes
 
       - name: Update pushed_at for repositories
         run: |
