@@ -50,6 +50,9 @@ document.addEventListener('DOMContentLoaded', function() {
     fetch('https://raw.githubusercontent.com/Shadow-Draconic-Development/.github/main/assets/repositories.json')
       .then(response => response.json())
       .then(data => {
+        // Sort the repositories alphabetically by name
+        data.sort((a, b) => a.name.localeCompare(b.name));
+        
         data.forEach(repo => {
           const lastUpdated = new Date(repo.pushed_at);
           const listItem = document.createElement('li');
@@ -70,3 +73,4 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error('Error fetching repository information:', error);
       });
 });
+
