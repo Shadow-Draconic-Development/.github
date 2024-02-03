@@ -4,16 +4,21 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '0 0 * * *'  # Runs daily
-  workflows:
-    types:
-      - completed
-    names:
-      - Build Site
+  push:
+    branches:
+      - main
 
 jobs:
   update-repos:
     runs-on: ubuntu-latest
     steps:
+
+      - name: Delay
+        if: github.event_name == 'push'
+        uses: jakejarvis/wait-action@v1
+        with:
+          time: '3m'
+
       - name: Checkout code
         uses: actions/checkout@v2
 
