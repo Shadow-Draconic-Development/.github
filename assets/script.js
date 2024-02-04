@@ -1,9 +1,16 @@
 function toggleDarkMode() {
     const body = document.body;
-    body.classList.toggle("dark-mode");
+    const isDarkMode = body.classList.toggle("dark-mode");
 
     // Update scrollbar colors based on dark mode
-    updateScrollbarColors(body.classList.contains("dark-mode"));
+    updateScrollbarColors(isDarkMode);
+
+    // Update Discord widget theme
+    const discordWidget = document.querySelector("iframe[src^='https://discord.com/widget']");
+    if (discordWidget) {
+        const newSrc = discordWidget.src.replace(/theme=(\w+)/, `theme=${isDarkMode ? 'dark' : 'light'}`);
+        discordWidget.src = newSrc;
+    }
 }
 
 function updateScrollbarColors(isDarkMode) {
@@ -24,6 +31,7 @@ if (prefersDarkMode) {
     document.body.classList.add("dark-mode");
     updateScrollbarColors(true);
 }
+
 
 window.onload = function() {
     if (typeof PatreonButton !== 'undefined' && PatreonButton !== null) {
