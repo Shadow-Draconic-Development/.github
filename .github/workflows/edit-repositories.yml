@@ -38,13 +38,13 @@ jobs:
         id: check_clean_working_tree
         run: |
           if [[ -n $(git status --porcelain) ]]; then
-            echo "::set-output name=clean_working_tree::false"
+            echo "CLEAN_WORKING_TREE=false" >> $GITHUB_ENV
           else
-            echo "::set-output name=clean_working_tree::true"
+            echo "CLEAN_WORKING_TREE=true" >> $GITHUB_ENV
           fi
 
       - name: Commit and push changes (If anything has updated)
-        if: steps.check_clean_working_tree.outputs.clean_working_tree == 'false'
+        if: env.CLEAN_WORKING_TREE == 'false'
         run: |
           git config --local user.email "shadowsstride@gmail.com"
           git config --local user.name "SethHartman13"
