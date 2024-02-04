@@ -16,10 +16,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Sleep if push event (and not self_triggered)
-        if: github.event_name == 'push' && github.event.head_commit.message != 'Update pushed_at for repositories'
-        run: sleep 180  # Sleep for 3 minutes
-
       - name: Update pushed_at for repositories
         run: |
           # Parse the JSON data and iterate through each repository
