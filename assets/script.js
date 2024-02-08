@@ -87,7 +87,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 dateTimeSpan.textContent = ` (Updated ${formattedDateTime})`; // Set concatenated date and time
                 // Add a class to the span element to style it differently
                 dateTimeSpan.classList.add('updated-date');
-                listItem.appendChild(dateTimeSpan);
             
                 // Append the list item to the appropriate list based on the repository status
                 if (repo.status === 'complete') {
