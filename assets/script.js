@@ -66,8 +66,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 const listItem = document.createElement('li');
                 const link = document.createElement('a');
                 const formattedName = repo.name.replace('Avrae-', '').replace(/-/g, ' ');
+                const options = { 
+                    timeZone: 'auto', 
+                    year: 'numeric', 
+                    month: '2-digit', 
+                    day: '2-digit', 
+                    hour: '2-digit', 
+                    minute: '2-digit' 
+                };
+                const formattedDate = lastUpdated.toLocaleString(undefined, options);
                 link.href = `https://github.com/${repo.owner}/${repo.name}`;
-                link.textContent = `${formattedName} (Updated ${lastUpdated.toLocaleDateString(undefined, { timeZone: 'auto' })} ${lastUpdated.getHours().toString().padStart(2, '0')}:${lastUpdated.getMinutes().toString().padStart(2, '0')})`;
+                link.textContent = `${formattedName} (Updated ${formattedDate})`;
                 listItem.appendChild(link);
 
                 if (repo.status === 'complete') {
@@ -81,5 +90,6 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Error fetching repository information:', error);
         });
 });
+
 
 
