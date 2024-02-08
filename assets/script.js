@@ -79,6 +79,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 link.href = `https://github.com/${repo.owner}/${repo.name}`;
                 link.textContent = formattedName;
 
+                // Append the link to the list item
+                listItem.appendChild(link);
+
                 // Create a span element for the date and time, and apply a class to it
                 const dateTimeSpan = document.createElement('span');
                 dateTimeSpan.textContent = ` (Updated ${formattedDate} ${formattedTime})`;
@@ -87,9 +90,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // Append the span to the link
                 link.appendChild(dateTimeSpan);
-
-                // Append the link to the list item
-                listItem.appendChild(link);
 
                 // Append the list item to the appropriate list based on the repository status
                 if (repo.status === 'complete') {
@@ -103,3 +103,4 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Error fetching repository information:', error);
         });
 });
+
