@@ -74,11 +74,22 @@ document.addEventListener('DOMContentLoaded', function() {
                     minute: '2-digit',
                     hour12: false
                 };
-                const formattedDate = lastUpdated.toLocaleString(undefined, options);
+                const formattedDate = lastUpdated.toLocaleDateString(undefined, options);
+                const formattedTime = lastUpdated.toLocaleTimeString(undefined, {hour: '2-digit', minute: '2-digit', hour12: false});
                 link.href = `https://github.com/${repo.owner}/${repo.name}`;
-                link.textContent = `${formattedName} (Updated ${formattedDate})`;
+                link.textContent = formattedName;
+
+                // Create a span element for the date and time
+                const dateTimeSpan = document.createElement('span');
+                dateTimeSpan.textContent = ` (Updated ${formattedDate} ${formattedTime})`;
+                // Add a class to the span element to style it differently
+                dateTimeSpan.classList.add('updated-date');
+                // Append the span to the link
+                link.appendChild(dateTimeSpan);
+
                 listItem.appendChild(link);
 
+                // Append the list item to the appropriate list based on the repository status
                 if (repo.status === 'complete') {
                     completeRepositoriesList.appendChild(listItem);
                 } else if (repo.status === 'in-progress') {
@@ -90,5 +101,3 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Error fetching repository information:', error);
         });
 });
-
-
