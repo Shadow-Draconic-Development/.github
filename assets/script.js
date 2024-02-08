@@ -56,29 +56,39 @@ document.addEventListener('DOMContentLoaded', function() {
     const inProgressRepositoriesList = document.getElementById('in-progress-repositories');
 
     fetch('https://raw.githubusercontent.com/Shadow-Draconic-Development/.github/main/assets/repositories.json')
-      .then(response => response.json())
-      .then(data => {
-        // Sort the repositories alphabetically by name
-        data.sort((a, b) => a.name.localeCompare(b.name));
-        
-        data.forEach(repo => {
-          const lastUpdated = new Date(repo.pushed_at);
-          const listItem = document.createElement('li');
-          const link = document.createElement('a');
-          const formattedName = repo.name.replace('Avrae-', '').replace(/-/g, ' ');
-          link.href = `https://github.com/${repo.owner}/${repo.name}`;
-          link.textContent = `${formattedName} (Updated ${lastUpdated.toLocaleDateString()})`;
-          listItem.appendChild(link);
+        .then(response => response.json())
+        .then(data => {
+            // Sort the repositories alphabetically by name
+            data.sort((a, b) => a.name.localeCompare(b.name));
+            
+            data.forEach(repo => {
+                const lastUpdated = new Date(repo.pushed_at);
+                const listItem = document.createElement('li');
+                const link = document.createElement('a');
+                const formattedName = repo.name.replace('Avrae-', '').replace(/-/g, ' ');
+                const options = { 
+                    year: 'numeric', 
+                    month: '2-digit', 
+                    day: '2-digit', 
+                    hour: '2-digit', 
+                    minute: '2-digit',
+                    hour12: false
+                };
+                const formattedDate = lastUpdated.toLocaleString(undefined, options);
+                link.href = `https://github.com/${repo.owner}/${repo.name}`;
+                link.textContent = `${formattedName} (Updated ${formattedDate})`;
+                listItem.appendChild(link);
 
-          if (repo.status === 'complete') {
-              completeRepositoriesList.appendChild(listItem);
-          } else if (repo.status === 'in-progress') {
-              inProgressRepositoriesList.appendChild(listItem);
-          }
+                if (repo.status === 'complete') {
+                    completeRepositoriesList.appendChild(listItem);
+                } else if (repo.status === 'in-progress') {
+                    inProgressRepositoriesList.appendChild(listItem);
+                }
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching repository information:', error);
         });
-      })
-      .catch(error => {
-        console.error('Error fetching repository information:', error);
-      });
 });
+
 
