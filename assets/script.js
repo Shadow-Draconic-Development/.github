@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 };
                 const formattedDate = lastUpdated.toLocaleDateString(undefined, options);
                 const formattedTime = lastUpdated.toLocaleTimeString(undefined, {hour: '2-digit', minute: '2-digit', hour12: false});
-                const formattedDateTime = `${formattedDate} ${formattedTime}`; // Concatenate date and time
+                const formattedDateTime = `${formattedDate}`; // Concatenate date and time
             
                 link.href = `https://github.com/${repo.owner}/${repo.name}`;
                 link.textContent = formattedName;
@@ -87,6 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 dateTimeSpan.textContent = ` (Updated ${formattedDateTime})`; // Set concatenated date and time
                 // Add a class to the span element to style it differently
                 dateTimeSpan.classList.add('updated-date');
+                listItem.appendChild(dateTimeSpan);
             
                 // Append the list item to the appropriate list based on the repository status
                 if (repo.status === 'complete') {
@@ -100,3 +101,4 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Error fetching repository information:', error);
         });
 });
+
