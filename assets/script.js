@@ -78,14 +78,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 const formattedTime = lastUpdated.toLocaleTimeString(undefined, {hour: '2-digit', minute: '2-digit', hour12: false});
                 link.href = `https://github.com/${repo.owner}/${repo.name}`;
                 link.textContent = formattedName;
-                listItem.appendChild(link);
 
                 // Create a span element for the date and time, and apply a class to it
                 const dateTimeSpan = document.createElement('span');
                 dateTimeSpan.textContent = ` (Updated ${formattedDate} ${formattedTime})`;
                 // Add a class to the span element to style it differently
                 dateTimeSpan.classList.add('updated-date');
-                listItem.appendChild(dateTimeSpan);
+
+                // Append the span to the link
+                link.appendChild(dateTimeSpan);
+
+                // Append the link to the list item
+                listItem.appendChild(link);
 
                 // Append the list item to the appropriate list based on the repository status
                 if (repo.status === 'complete') {
