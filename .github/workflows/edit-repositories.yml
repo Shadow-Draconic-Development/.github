@@ -49,5 +49,5 @@ jobs:
           git config --local user.email "shadowsstride@gmail.com"
           git config --local user.name "SethHartman13"
           git add assets/repositories.json
-          git commit -m "Update pushed_at for repositories"
+          git commit -m "Updated Website on Last Updated Dates for Repositories - BOT"
           git push
